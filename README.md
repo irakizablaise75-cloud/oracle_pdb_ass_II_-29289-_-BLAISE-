@@ -51,7 +51,7 @@ This assignment demonstrates practical skills in Oracle Multitenant Architecture
 
 ## Challenges Faced and Solutions
 
-_Replace this section with any issues you encountered (e.g., privileges, open state, naming conflicts) and how you solved them. If none, state "No significant challenges encountered."_
+No significant challenges encountered.
 
 ## Integrity Statement
 
@@ -59,6 +59,6 @@ I confirm that all work in this repository, including commands, executions, and 
 
 ## Submission Details
 
-- **Repository Link:** [Paste your public GitHub repository URL here]
+- **Repository Link:** https://github.com/irakizablaise75-cloud/oracle_pdb_ass_II_-29289-_-BLAISE-
 - **PDB Name Created:** `bl_pdb_29289`
-- **Issues Encountered:** [Yes/No]
+- **Issues Encountered:** No
