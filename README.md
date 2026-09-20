@@ -42,9 +42,9 @@ GRANT CONNECT, RESOURCE TO Blaise_plsqlauca_29289;
 
 **Evidence:**
 
-![PDB created and opened](screenshots/pdb_creation/01_create_pdb_and_open.png)
+![Task 1 - PDB created and opened](screenshots/pdb_creation/01_create_pdb_and_open.png)
 
-![PDB connection successful](screenshots/pdb_creation/02_pdb_connection_success.png)
+![Task 1 - PDB connection successful](screenshots/pdb_creation/02_pdb_connection_success.png)
 
 ## Task 2: Create and Delete a PDB
 
@@ -68,9 +68,9 @@ SHOW PDBS;
 
 **Evidence:**
 
-![Temporary PDB created](screenshots/pdb_deletion/01_temp_pdb_created.png)
+![Task 2 - Temporary PDB created](screenshots/pdb_deletion/01_temp_pdb_created.png)
 
-![Temporary PDB dropped](screenshots/pdb_deletion/02_temp_pdb_dropped.png)
+![Task 2 - Temporary PDB dropped](screenshots/pdb_deletion/02_temp_pdb_dropped.png)
 
 ## Task 3: Oracle Enterprise Manager (OEM)
 
@@ -87,7 +87,7 @@ https://<hostname>:5500/em
 
 **Evidence:**
 
-![OEM SQL Monitor dashboard](screenshots/oem_dashboard/01_oem_sql_monitor_dashboard.png)
+![Task 3 - OEM SQL Monitor dashboard](screenshots/oem_dashboard/01_oem_sql_monitor_dashboard.png)
 
 ## Challenges Faced and Solutions
 
