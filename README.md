@@ -24,6 +24,22 @@ This assignment demonstrates practical skills in Oracle Multitenant Architecture
 - **User created inside PDB:** `Blaise_plsqlauca_29289`
 - The PDB was created successfully, opened, and the user was created inside it.
 
+**Commands:**
+
+```
+sqlplus / as sysdba
+CREATE PLUGGABLE DATABASE bl_pdb_29289
+  ADMIN USER pdb_admin IDENTIFIED BY <password>
+  FILE_NAME_CONVERT = ('/pdbseed/', '/bl_pdb_29289/');
+ALTER PLUGGABLE DATABASE bl_pdb_29289 OPEN;
+SHOW PDBS;
+
+-- switch to the new PDB and create the user
+ALTER SESSION SET CONTAINER = bl_pdb_29289;
+CREATE USER Blaise_plsqlauca_29289 IDENTIFIED BY <password>;
+GRANT CONNECT, RESOURCE TO Blaise_plsqlauca_29289;
+```
+
 **Evidence:**
 
 ![PDB created and opened](screenshots/pdb_creation/01_create_pdb_and_open.png)
@@ -35,6 +51,21 @@ This assignment demonstrates practical skills in Oracle Multitenant Architecture
 - **Temporary PDB name:** `bl_to_delete_pdb_29289`
 - The temporary PDB was created, verified to exist, then dropped and confirmed removed.
 
+**Commands:**
+
+```
+CREATE PLUGGABLE DATABASE bl_to_delete_pdb_29289
+  ADMIN USER pdb_admin IDENTIFIED BY <password>
+  FILE_NAME_CONVERT = ('/pdbseed/', '/bl_to_delete_pdb_29289/');
+ALTER PLUGGABLE DATABASE bl_to_delete_pdb_29289 OPEN;
+SHOW PDBS;
+
+-- drop the temporary PDB (must be closed first)
+ALTER PLUGGABLE DATABASE bl_to_delete_pdb_29289 CLOSE IMMEDIATE;
+DROP PLUGGABLE DATABASE bl_to_delete_pdb_29289 INCLUDING DATAFILES;
+SHOW PDBS;
+```
+
 **Evidence:**
 
 ![Temporary PDB created](screenshots/pdb_deletion/01_temp_pdb_created.png)
@@ -44,6 +75,15 @@ This assignment demonstrates practical skills in Oracle Multitenant Architecture
 ## Task 3: Oracle Enterprise Manager (OEM)
 
 - OEM is accessible and the dashboard reflects the Oracle environment and completed PDB tasks, with username visible.
+
+**How to access:**
+
+```
+-- OEM Express is enabled per PDB in Oracle 21c and is opened in a browser:
+https://<hostname>:5500/em
+
+-- Login with the PDB user created in Task 1 (Blaise_plsqlauca_29289) or SYSDBA credentials.
+```
 
 **Evidence:**
 
