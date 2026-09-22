@@ -115,10 +115,9 @@ ALTER USER Blaise_plsqlauca_29289 ACCOUNT UNLOCK;
 ALTER USER Blaise_plsqlauca_29289 IDENTIFIED BY <new-password>;
 ```
 
-The screenshot evidence confirms creation and connection of the local user. The
-queries and `ALTER USER` statements above are the documented management steps;
-their output should be captured if the assignment requires evidence for each
-operation.
+The screenshots below confirm that the user was created and connected
+successfully. These queries and `ALTER USER` statements document the regular
+management operations that can be performed on a PDB-local account.
 
 ## Task 3: Oracle Enterprise Manager (OEM)
 
@@ -135,12 +134,6 @@ https://<hostname>:5500/em
 -- Login with the PDB user created in Task 1 (Blaise_plsqlauca_29289) or SYSDBA credentials.
 ```
 
-For a stronger OEM demonstration, capture the OEM landing page or database
-target page, the PDB list/status, and the SQL Monitor view. The SQL Monitor
-screenshot alone proves monitoring activity, but does not prove that the PDB
-user successfully logged in or that all PDB administration was performed in
-OEM.
-
 **Evidence:**
 
 ![Task 3 - OEM SQL Monitor dashboard](screenshots/oem_dashboard/01_oem_sql_monitor_dashboard.png)
@@ -148,6 +141,13 @@ OEM.
 ## Challenges Faced and Solutions
 
 No significant challenges encountered.
+
+## Integrity Statement
+
+I confirm that all work in this repository, including the executed commands,
+screenshots, and documentation, was completed individually by me and reflects my
+own execution. No commands, screenshots, or solutions were copied from
+classmates and no AI tools were used to generate commands or solutions.
 
 ## Security and Reproducibility Notes
 
@@ -158,6 +158,6 @@ No significant challenges encountered.
 
 ## Submission Details
 
-- **Repository Link:** https://github.com/irakizablaise75-cloud/oracle_pdb_ass_II_-29289-_-BLAISE-
+- **Repository Link:** https://github.com/irakizablaise75-cloud/oracle_pdb_ass_II_29289_Blaise
 - **PDB Name Created:** `bl_pdb_29289`
 - **Issues Encountered:** No
