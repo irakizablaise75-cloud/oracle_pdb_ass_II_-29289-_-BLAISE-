@@ -91,33 +91,19 @@ SHOW PDBS;
 
 ![Task 2 - Temporary PDB dropped](screenshots/pdb_deletion/02_temp_pdb_dropped.png)
 
-## User Creation and Management
+## User Creation inside the PDB
 
-User administration must be performed in the intended PDB. The following checks
-and management operations document the local-user lifecycle:
+After opening `bl_pdb_29289`, the session was switched to the PDB and the local
+user was created:
 
 ```sql
 ALTER SESSION SET CONTAINER = bl_pdb_29289;
-
--- Confirm the user exists in this PDB
-SELECT username, account_status, default_tablespace
-FROM dba_users
-WHERE username = 'BLAISE_PLSQLAUCA_29289';
-
--- Review the user's granted privileges
-SELECT privilege
-FROM dba_sys_privs
-WHERE grantee = 'BLAISE_PLSQLAUCA_29289';
-
--- Example account-management operations
-ALTER USER Blaise_plsqlauca_29289 ACCOUNT LOCK;
-ALTER USER Blaise_plsqlauca_29289 ACCOUNT UNLOCK;
-ALTER USER Blaise_plsqlauca_29289 IDENTIFIED BY <new-password>;
+CREATE USER Blaise_plsqlauca_29289 IDENTIFIED BY <password>;
+GRANT CONNECT, RESOURCE TO Blaise_plsqlauca_29289;
 ```
 
-The screenshots below confirm that the user was created and connected
-successfully. These queries and `ALTER USER` statements document the regular
-management operations that can be performed on a PDB-local account.
+The user was created and connected successfully, as shown in the screenshots
+above.
 
 ## Task 3: Oracle Enterprise Manager (OEM)
 
@@ -154,7 +140,7 @@ classmates and no AI tools were used to generate commands or solutions.
 - Never commit real database passwords. Use placeholders such as `<password>` in
   commands and redact passwords from screenshots.
 - Replace `<hostname>` with the database host used in the local environment.
-- Run the user-management queries in `bl_pdb_29289`, not in `CDB$ROOT`.
+- Create the local user inside `bl_pdb_29289`, not in `CDB$ROOT`.
 
 ## Submission Details
 
